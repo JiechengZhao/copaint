@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+hello, try canvas.
+    
+<canvas id="myCanvas"></canvas>
+    <p></p>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+
+var canvas=document.getElementById('myCanvas');
+var ctx=canvas.getContext('2d');
+
+
+$("#myCanvas").on("mousemove",function(e) {
+    var point = {};
+    point.x = e.pageX - $(this).offset().left;
+    point.y = e.pageY - $(this).offset().top;
+    $('P').text(JSON.stringify(point))
+    ctx.fillStyle='#FF0000';
+    ctx.fillRect(point.x-3 ,point.y-3 ,6,6);
+})
+    
+</script>
+
+</body>
+</html>
